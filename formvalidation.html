@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer Registration</title>
+
+    <style>
+        .error{
+            color:red;
+            margin-left:10px;
+        }
+
+        .invalid{
+            border:2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Farmer Registration</h1>
+
+<p>Create a registration page for farmers.</p>
+
+<form id="farmerForm">
+
+    <fieldset>
+
+        <legend>Farmer Details</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"
+               placeholder="Enter your name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile"
+               placeholder="Enter mobile number">
+        <span id="mobileError" class="error"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <label for="plot">Plot ID:</label>
+        <input type="text" id="plot" name="plot"
+               placeholder="Enter Plot ID">
+        <span id="plotError" class="error"></span>
+        <br><br>
+
+        <label for="village">Village:</label>
+        <input type="text" id="village" name="village"
+               placeholder="Enter village name">
+        <span id="villageError" class="error"></span>
+        <br><br>
+
+        <label for="crop">Crop Stage:</label>
+        <select id="crop" name="crop">
+            <option value="">Select Crop Stage</option>
+            <option value="seedling">Seedling</option>
+            <option value="vegetative">Vegetative</option>
+            <option value="flowering">Flowering</option>
+            <option value="maturity">Maturity</option>
+        </select>
+        <span id="cropError" class="error"></span>
+        <br><br>
+
+        <label for="soil">Soil Type:</label>
+        <select id="soil" name="soil">
+            <option value="">Select Soil Type</option>
+            <option value="black">Black Soil</option>
+            <option value="red">Red Soil</option>
+            <option value="alluvial">Alluvial Soil</option>
+            <option value="sandy">Sandy Soil</option>
+        </select>
+        <span id="soilError" class="error"></span>
+        <br><br>
+
+        <label>Irrigation Method:</label>
+
+        <input type="radio" id="drip" name="irrigation" value="drip">
+        <label for="drip">Drip</label>
+
+        <input type="radio" id="sprinkler" name="irrigation" value="sprinkler">
+        <label for="sprinkler">Sprinkler</label>
+
+        <input type="radio" id="flood" name="irrigation" value="flood">
+        <label for="flood">Flood</label>
+
+        <span id="irrigationError" class="error"></span>
+
+        <br><br>
+
+        <label for="moisture">Soil Moisture (%):</label>
+        <input type="number" id="moisture" name="moisture">
+        <br><br>
+
+        <label for="date">Registration Date:</label>
+        <input type="date" id="date" name="date">
+        <span id="dateError" class="error"></span>
+        <br><br>
+
+        <label for="photo">Farm Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        <br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear">
+
+    </fieldset>
+
+</form>
+
+<script>
+
+document.getElementById("farmerForm").addEventListener("submit", function(e){
+
+    let valid = true;
+
+    document.querySelectorAll(".error").forEach(function(span){
+        span.innerHTML = "";
+    });
+
+    document.querySelectorAll("input, select").forEach(function(field){
+        field.classList.remove("invalid");
+    });
+
+    let name = document.getElementById("name").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let plot = document.getElementById("plot").value.trim();
+    let village = document.getElementById("village").value.trim();
+    let crop = document.getElementById("crop").value;
+    let soil = document.getElementById("soil").value;
+    let date = document.getElementById("date").value;
+
+    let irrigation =
+    document.querySelector('input[name="irrigation"]:checked');
+
+    if(name === "" || !/^[A-Za-z ]+$/.test(name)){
+        document.getElementById("nameError").innerHTML =
+        "Enter valid name";
+        document.getElementById("name").classList.add("invalid");
+        valid = false;
+    }
+
+    if(plot === ""){
+        document.getElementById("plotError").innerHTML =
+        "Plot ID required";
+        document.getElementById("plot").classList.add("invalid");
+        valid = false;
+    }
+
+    if(village === ""){
+        document.getElementById("villageError").innerHTML =
+        "Village required";
+        document.getElementById("village").classList.add("invalid");
+        valid = false;
+    }
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+        document.getElementById("mobileError").innerHTML =
+        "Enter valid 10-digit mobile";
+        document.getElementById("mobile").classList.add("invalid");
+        valid = false;
+    }
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        document.getElementById("emailError").innerHTML =
+        "Enter valid email";
+        document.getElementById("email").classList.add("invalid");
+        valid = false;
+    }
+
+    if(crop === ""){
+        document.getElementById("cropError").innerHTML =
+        "Select crop stage";
+        document.getElementById("crop").classList.add("invalid");
+        valid = false;
+    }
+
+    if(soil === ""){
+        document.getElementById("soilError").innerHTML =
+        "Select soil type";
+        document.getElementById("soil").classList.add("invalid");
+        valid = false;
+    }
+
+    if(!irrigation){
+        document.getElementById("irrigationError").innerHTML =
+        "Select irrigation method";
+        valid = false;
+    }
+
+    if(date === ""){
+        document.getElementById("dateError").innerHTML =
+        "Select registration date";
+        document.getElementById("date").classList.add("invalid");
+        valid = false;
+    }
+    else{
+        let today = new Date().toISOString().split("T")[0];
+
+        if(date > today){
+            document.getElementById("dateError").innerHTML =
+            "Future date not allowed";
+            document.getElementById("date").classList.add("invalid");
+            valid = false;
+        }
+    }
+
+    if(!valid){
+        e.preventDefault();
+    }
+    else{
+        alert("Registration Successful");
+    }
+
+});
+
+</script>
+
+</body>
+</html>

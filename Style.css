@@ -1,0 +1,330 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #e8efe8;
+    margin: 0;
+}
+
+header{
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav{
+    background-color: #2e7d32;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: yellow;
+}
+
+section, article, aside{
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1,h2,h3{
+    color: #1b5e20;
+}
+
+footer{
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* TASK 4
+
+.sidebar{
+    width: 300px;
+    background-color: white;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+
+.sidebar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li{
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.sidebar li:hover{
+    background-color: #c8e6c9;
+} */
+
+
+/* Task 5 : Card Layout 
+
+.book-card{
+    width: 250px;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+    vertical-align: top;
+}
+
+.book-card h2{
+    color: #1b5e20;
+} 
+    */
+
+    /* Task 6 : Image Gallery 
+
+.gallery-section{
+    margin: 20px;
+    text-align: center;
+}
+
+.gallery{
+    text-align: center;
+}
+
+.gallery img{
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    border: 3px solid #2e7d32;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover{
+    transform: scale(1.1);
+}
+    */
+
+/* Task 7 : Table Styling 
+
+.price-table{
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.price-table th,
+.price-table td{
+    border: 1px solid #2e7d32;
+    padding: 12px;
+}
+
+.price-table th{
+    background-color: #2e7d32;
+    color: white;
+}
+
+.price-table tr:nth-child(even){
+    background-color: #f1f0f4;
+} */
+
+/* Task 8 : Registration Form 
+
+.register-form{
+    width: 50%;
+    margin: 20px auto;
+}
+
+fieldset{
+    border: 2px solid #2e7d32;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+}
+
+legend{
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.register-form input[type="text"]:focus,
+.register-form input[type="email"]:focus{
+    border: 2px solid #2e7d32;
+}
+
+.register-form input[type="submit"]{
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-form input[type="submit"]:hover{
+    background-color: #1b5e20;
+}
+    */
+ 
+
+/* 
+.task9-layout {
+    width: 95%;
+    margin: 30px auto;
+    border: 2px solid #2e7d32;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+}
+
+.task9-header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.task9-header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.task9-header p {
+    margin: 8px 0 0;
+    font-size: 16px;
+}
+
+ 
+
+.task9-main {
+    display: flex;
+    min-height: 400px;
+}
+
+.task9-sidebar {
+    width: 25%;
+    background-color: #e8f5e9;
+    padding: 25px;
+    box-sizing: border-box;
+    border-right: 2px solid #c8e6c9;
+}
+
+.task9-sidebar h2 {
+    color: #1b5e20;
+    margin-top: 0;
+}
+
+.task9-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task9-sidebar li {
+    background-color: #ffffff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #43a047;
+}
+
+.task9-content {
+    width: 75%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.task9-content h2 {
+    color: #2e7d32;
+    margin-top: 0;
+}
+
+.task9-content p {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.task9-box {
+    background-color: #f1f8e9;
+    border-left: 5px solid #43a047;
+    padding: 18px;
+    margin-top: 25px;
+}
+
+.task9-box h3 {
+    color: #33691e;
+    margin-top: 0;
+}
+
+
+
+.task9-footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.task9-footer p {
+    margin: 0;
+}
+ */
+
+
+/*  EXP 2 TASK 10
+.offer-box {
+    background-color: #fff3cd;
+    border: 3px solid #f0ad4e;
+    padding: 25px;
+    margin: 30px auto;
+    width: 70%;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(240, 173, 78, 0.7);
+    text-shadow: 1px 1px 2px #999;
+    animation: offerGlow 1.5s infinite alternate;
+}
+
+.offer-box h2 {
+    color: #d35400;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.offer-box strong {
+    display: block;
+    color: #c0392b;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+@keyframes offerGlow {
+    from {
+        box-shadow: 0 0 8px #f0ad4e;
+    }
+
+    to {
+        box-shadow: 0 0 25px #ff9800;
+    }
+}
+ */
